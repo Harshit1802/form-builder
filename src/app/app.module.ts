@@ -15,11 +15,13 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
+
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent
+  
 
   ],
   imports: [
