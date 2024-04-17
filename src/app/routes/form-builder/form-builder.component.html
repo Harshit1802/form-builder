@@ -1,0 +1,33 @@
+<div class="fb-container">
+  <div class="toolbar">
+    ToolBox
+    <div class="item">Row</div>
+    <div class="item">Column</div>
+    <div></div>
+  </div>
+  <div class="builder">
+    <ng-container *ngFor="let component of menus">
+     <app-row-container [rowComponent]="component"></app-row-container>
+    </ng-container>
+  </div>
+
+  <div class="configuration">
+
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+        <mat-tab label="Main">
+            <ng-container>
+            <xp-component [configartion]="mainConfig"></xp-component>
+        </ng-container>
+        </mat-tab>
+        <mat-tab label="Style">
+                <ng-container>
+                    <xp-component [configartion]="styleConfig"></xp-component>
+              </ng-container>
+        </mat-tab>
+        <mat-tab label="Action">Content 3</mat-tab>
+      </mat-tab-group>
+      
+     
+      
+  </div>
+</div>

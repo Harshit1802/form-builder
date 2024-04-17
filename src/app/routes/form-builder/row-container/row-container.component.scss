@@ -1,0 +1,21 @@
+.row {
+   
+    display: flex;
+    flex-direction: row;
+    border: 1px solid green;
+    flex: 1 1 auto;
+   flex-wrap: wrap;
+  }
+
+  .column{
+    display: flex;
+    flex: 1 1 auto;
+    border: 1px solid red;
+  }
+
+  .drag-item{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    background-color: gray;
+  }

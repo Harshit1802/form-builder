@@ -1,0 +1,100 @@
+{
+    "pageTitle": "Area",
+    "pageTitlePrefix": "addedit",
+    "type": "popup",
+    "pageConfig": {
+        "parentPageJson": "area",
+        "onPopupClose": "refresh",
+        "defaultData":"parent",
+        "footerActions": [
+            {
+                "type": "button",
+                "label": "Cancel",
+                "icon": "",
+                "event": {
+                    "type": "click",
+                    "onevent": "closeandrefreshparent",
+                    "api": ""
+                }
+            },
+            {
+                "type": "button",
+                "label": "Save",
+                "icon": "plus",
+                "event": {
+                    "type": "click",
+                    "onevent": "postformdata",
+                    "api": "api/common/sub-department"
+                }
+            }
+        ]
+    },
+    "formConfig": {
+        "rows": [
+            {
+                "columns": [
+                    {
+                        "width": 20,
+                        "height": "2",
+                        "controls": [
+                            {
+                                "label": "Block",
+                                "id": "block",
+                                "type": "select",
+                                "fieldId": "blockId",
+                                "placeholder": "Block",
+                                "tooltip": "",
+                                "validations": [
+                                    {
+                                        "type": "required",
+                                        "message": "Block is required"
+                                    }
+                                ],
+                                "isDisabled": false,
+                                "isVisible": true,
+                                "isChangeHandle": false,
+                                "css": "",
+                                "options": {
+                                    "dataSource": "api/common/blocks",
+                                    "dataSourceType": "api",
+                                    "textField": "name",
+                                    "valueField": "_id",
+                                    "list": []
+                                }
+                            }
+                        ]
+                    }
+                ]
+                },
+                {
+                    "columns": [
+                    {
+                        "width": 20,
+                        "height": "2",
+                        "controls": [
+                            {
+                                "label": "Name",
+                                "id": "",
+                                "type": "text",
+                                "fieldId": "name",
+                                "placeholder": "Area Name",
+                                "tooltip": "",
+                                "validations": [
+                                    {
+                                        "type": "required",
+                                        "message": "Area is required"
+                                    }
+                                ],
+                                "isDisabled": false,
+                                "isVisible": true,
+                                "isChangeHandle": false,
+                                "css": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+         
+        ]
+    }
+}

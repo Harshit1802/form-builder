@@ -1,0 +1,164 @@
+[
+  {
+    "menuName": "Dashboard",
+    "icon": "",
+    "href": "",
+    "tooltip": "",
+    "children": [],
+    "permissions":["Manage Dashboard"]
+  },
+  
+  {
+    "menuName": "Configuration",
+    "icon": "",
+    "href": "/page",
+    "children": [
+      {
+        "menuName": "Security Manager",
+        "icon": "",
+        "href": "",
+        "children": [
+          {
+            "menuName": "Manage User",
+            "icon": "",
+            "href": "/page/user-list",
+            "children": [],
+            "permissions": ["Add User", "Edit User"]
+          },
+          {
+            "menuName": "Roles",
+            "icon": "",
+            "href": "/page/role",
+            "children": [],
+            "permissions": ["Manage Roles"]
+          },
+          {
+            "menuName": "Permissions",
+            "icon": "",
+            "href": "/page/permissions",
+            "children": [],
+            "permissions": ["Manage Permissions"]
+          }
+        ]
+      },
+      {
+        
+          "menuName": "System Setup",
+          "icon": "",
+          "href": "",
+          "children": [
+            {
+              "menuName": "Plant",
+              "icon": "",
+              "href": "/page/plant-list",
+              "children": [],
+              "permissions": ["Manage Plant"]
+            },
+            {
+              "menuName": "Department/Block",
+              "icon": "",
+              "href": "/page/block-list",
+              "children": [],
+              "permissions": ["Manage block"]
+            },
+            {
+              "menuName": "Sub-Department",
+              "icon": "",
+              "href": "/page/area-list",
+              "children": [],
+              "permissions": ["Manage Area"]
+            }
+          ]
+         
+       
+      }
+    ]
+  },
+ 
+  {
+    "menuName": "Masters",
+    "icon": "",
+    "href": "",
+    "tooltip": "",
+    "children": [
+      {
+        "menuName": "Templates",
+        "icon": "",
+        "href": "/page/plant-list",
+        "children": [
+          {
+            "menuName": "Custom Template",
+            "icon": "",
+            "href": "/page/user-list",
+            "children": [],
+            "permissions": ["Add User", "Edit User"]
+          }
+        ]
+       
+      },
+      {
+        "menuName": "Module Vs. Departments",
+        "icon": "",
+        "href": "/page/plant-list",
+        "children": [],
+        "permissions": ["Manage Plant"]
+      },
+      {
+        "menuName": "Equipments",
+        "icon": "",
+        "href": "/page/block-list",
+        "children": [],
+        "permissions": ["Manage block"]
+      }
+      
+    ],
+    "permissions":[]
+  },
+  {
+    "menuName": "Production Logs",
+    "icon": "",
+    "href": "",
+    "tooltip": "",
+    "children": [],
+    "permissions":["Manage Plant"]
+  },
+  {
+    "menuName": "Engineering Logs",
+    "icon": "",
+    "href": "",
+    "tooltip": "",
+    "children": [],
+    "permissions":["Manage Plant"]
+  },
+  {
+    "menuName": "Alarms",
+    "icon": "",
+    "href": "",
+    "tooltip": "",
+    "children": [],
+    "permissions":["Manage Plant"]
+  },
+  {
+    "menuName": "Reports",
+    "icon": "",
+    "href": "",
+    "tooltip": "",
+    "children": [{
+      "menuName": "User Profile",
+      "icon": "",
+      "href": "",
+      "tooltip": "",
+      "children": [],
+      "permissions":["Manage Plant"]
+      },
+      {
+        "menuName": "Audit Trail",
+        "icon": "",
+        "href": "",
+        "tooltip": "",
+        "children": [],
+        "permissions":["Manage Plant"]
+        }],
+    "permissions":[]
+  }
+]

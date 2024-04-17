@@ -1,0 +1,30 @@
+{
+    "pageTitle": "Are you sure you want to delete?",
+    "type": "popup",
+    "pageConfig": {
+        "defaultData":"parent",
+        "onPopupClose": "close",
+        "footerActions": [
+            {
+                "type": "button",
+                "label": "Cancel",
+                "icon": "",
+                "event": {
+                    "type": "click",
+                    "onevent": "closeandrefreshparent",
+                    "api": ""
+                }
+            },
+            {
+                "type": "button",
+                "label": "Delete",
+                "icon": "",
+                "event": {
+                    "type": "click",
+                    "onevent": "deleteItem"
+                   
+                }
+            }
+        ]
+    }
+}

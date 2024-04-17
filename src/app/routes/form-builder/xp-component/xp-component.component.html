@@ -1,0 +1,138 @@
+<div class="dynamic-field" *ngFor="let config of configartion">
+    <div *ngIf="config.type == 'label'">
+        <label [for]="config.fieldId">{{ config.label }}</label>
+        <label *ngIf="config.value"> : {{config.value}}</label>
+    </div>
+    <div *ngIf="config.type == 'heading'">
+     <h3><strong>{{config.label}}</strong></h3>
+    </div>
+    <input *ngIf="config.type == 'hidden'" type="hidden"  />
+    <div *ngIf="config.type == 'text' || config.type == 'number' || config.type == 'color' " >
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>{{config.label}}</mat-label>
+            <input matInput [type]="config.type" [placeholder]="config.label"
+              >
+
+        </mat-form-field>
+
+    </div>
+    <!-- <div *ngIf="config.type == 'password'">
+    
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>{{config.label}}</mat-label>
+            <input type="password" matInput [type]="hide ? 'password' : 'text'"  [placeholder]="config.label">
+            <button type= "button"  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+
+            
+          </mat-form-field></div> -->
+    <div *ngIf="config.type == 'textarea'">
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label >{{config.label}}</mat-label>
+            <textarea matInput  cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="3" cdkAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+    </div>
+        <div  *ngIf="config.type == 'appEditor'">
+            <!-- <mat-form-field appearance="outline" class="full-width"> -->
+                <mat-label >{{config.label}}</mat-label>
+             
+            <!-- </mat-form-field> -->
+           
+        </div>
+  
+    <div *ngIf="config.type == 'select'">
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label >{{config.label}}</mat-label>
+            <mat-select >
+                <mat-option>None</mat-option>
+                <ng-container *ngIf="config && config.options && config.options.list && config.options.list.length > 0">
+                    <ng-container *ngFor="let l of config.options.list">
+                        <mat-option
+                            [value]="l[config.options?.valueField]">{{l[config.options?.textField]}}</mat-option>
+                    </ng-container>
+                </ng-container>
+
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+    <div *ngIf="config.type == 'multiselect'">
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label >{{config.label}}</mat-label>
+            <mat-select  multiple>
+                <mat-option>None</mat-option>
+                <ng-container *ngIf="config && config.options && config.options.list && config.options.list.length > 0">
+                    <ng-container *ngFor="let l of config.options.list">
+                        <mat-option
+                            [value]="l[config.options?.valueField]">{{l[config.options?.textField]}}</mat-option>
+                    </ng-container>
+                </ng-container>
+
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+    <div *ngIf="config.type == 'fileupload'">
+        <label [for]="config.fieldId">{{ config.label }}</label>
+      
+    </div>
+
+    <div *ngIf="config.type == 'radiobutton'">
+        <mat-label >{{config.label}}</mat-label>
+        <mat-radio-group >
+            <ng-container *ngIf="config && config.options && config.options.list && config.options.list.length > 0">
+                <ng-container *ngFor="let l of config.options.list">
+                    <mat-radio-button color="primary"
+                        [value]="l[config.options?.valueField]">{{l[config.options?.textField]}}</mat-radio-button>
+                </ng-container>
+            </ng-container>
+        </mat-radio-group>
+    </div>
+    <div *ngIf="config.type=='tabs'">
+        <span class="example-button-toggle-label">{{config.label}}</span>
+        <mat-button-toggle-group #colorToggle="matButtonToggleGroup"
+                                 value="primary"
+                                 aria-label="Change color">
+          <mat-button-toggle value="primary">Primary</mat-button-toggle>
+          <mat-button-toggle value="accent">Accent</mat-button-toggle>
+          <mat-button-toggle value="warn">Warn</mat-button-toggle>
+        </mat-button-toggle-group>
+        
+      </div>
+      
+    <div *ngIf="config.type == 'date'">
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label >{{config.label}}</mat-label>
+            <input matInput [matDatepicker]="picker" >
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <!-- <div *ngIf="config.type == 'time'">
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label >{{config.label}}</mat-label>
+            <input matInput  [ngxMatTimepicker]="pickerA" readonly />
+            <mat-icon matSuffix (click)="pickerA.open()">
+                watch_later
+            </mat-icon>
+        </mat-form-field>
+        <ngx-mat-timepicker #pickerA></ngx-mat-timepicker>
+    </div> -->
+    <div *ngIf="config.type == 'checkBox'">
+        <mat-checkbox class="mat-checkbox" color="primary">
+            {{config.label}}
+        </mat-checkbox>
+    </div>
+    <!-- <div *ngIf="config.type == 'imageupload'" >
+        <app-form-thumbnail [controlConfig]="config" [value]="config.value" (onUploadFile)="onUploadFile($event)"></app-form-thumbnail>
+    </div>
+    <div *ngIf="config.type == 'button'">
+        <button mat-raised-button color="primary" (click)="buttonActionClick(config.event,$event);"><mat-icon *ngif="config.icon">{{config.icon}}</mat-icon>{{config.label}}</button>
+    </div> -->
+
+</div>

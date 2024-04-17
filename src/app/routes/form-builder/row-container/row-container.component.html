@@ -1,0 +1,35 @@
+<div [ngClass]="{'row':rowComponent.type=='row' , 'column' : rowComponent.type=='column' }"
+  *ngIf="rowComponent.type == 'row' || rowComponent.type == 'column'">
+  <app-row-container *ngFor="let control of rowComponent.components" [rowComponent]="control"></app-row-container>
+
+</div>
+
+<div *ngIf="rowComponent.type == 'checkBox'">
+  <mat-checkbox>Checkox Description</mat-checkbox>
+</div>
+
+<div *ngIf="rowComponent.type == 'radio'">
+  <label>Float label: </label>
+  <mat-radio-group>
+    <mat-radio-button value="auto">Auto</mat-radio-button>
+    <mat-radio-button value="always">Always</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+<div class="example-form-fields" *ngIf="rowComponent.type == 'textBox'">
+  <mat-form-field appearance="outline">
+    <input matInput />
+  </mat-form-field>
+</div>
+<div *ngIf="rowComponent.type == 'drop-down'">
+  <mat-form-field>
+    <mat-select>
+      <mat-option>-- None --</mat-option>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+    <mat-label><mat-icon>favorite</mat-icon> <strong> Fancy</strong>
+      <em> label</em></mat-label>
+  </mat-form-field>
+</div>
+
+<!-- <div class="drag-item"> Drag Item Here</div> -->

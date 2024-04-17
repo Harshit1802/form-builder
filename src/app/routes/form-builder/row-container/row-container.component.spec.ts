@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { RowContainerComponent } from './row-container.component';
+
+describe('RowContainerComponent', () => {
+  let component: RowContainerComponent;
+  let fixture: ComponentFixture<RowContainerComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ RowContainerComponent ]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(RowContainerComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

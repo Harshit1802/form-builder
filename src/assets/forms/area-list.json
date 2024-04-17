@@ -1,0 +1,88 @@
+{
+    "pageTitle": "Area",
+    
+    "breadcrumbs": [
+        {
+            "menuName": "Utility",
+            "url": "/app/landing"
+        },
+        {
+            "menuName": "Sub-Department",
+            "url": ""
+        }
+    ],
+    "pageActions": [
+        {
+            "type": "button",
+            "label": "Add",
+            "icon": "add",
+            "event": {
+                "type": "click",
+                "onevent": "popup",
+                "popupJson": "area-manage",
+                "popupwidth":"30%"
+            }
+        },
+        {
+            "action": "refresh"
+        },
+        {
+            "action": "export"
+        },
+        {
+            "action": "filter"
+        }
+    ],
+    "filter": [
+        {
+            "name": "roleName",
+            "type": "textbox",
+            "placeholder": "Role"
+        }
+    ],
+    "table": {
+        "dataSource": "api/common/sub-department",
+        "tableColumns": [
+            {
+                "key": "name",
+                "title": "Name"
+            },
+            {
+                "key": "blockName",
+                "title": "Block"
+             
+                
+            },
+            {
+                "key": "action",
+                "title": "Action",
+                "actions":[
+                    {
+                        "type": "Edit",
+                        "label": "Edit",
+                        "icon": "edit",
+                        "isDisabled":"false",
+                        "event": {
+                            "type": "click",
+                            "onevent": "popup",
+                            "popupJson": "area-manage"
+                        }
+                    },
+                    {
+                        "type": "Delete",
+                        "label": "Delete",
+                        "icon": "delete",
+                        "isDisabled": "false",
+                        "event": {
+                            "type": "click",
+                            "onevent": "popup",
+                            "popupJson": "confirmation-popup",
+                            "popupwidth": "25%",
+                            "api": "api/common/sub-department"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

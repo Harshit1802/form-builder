@@ -1,0 +1,88 @@
+{
+    "pageTitle": "Block",
+    
+    "breadcrumbs": [
+        {
+            "menuName": "Utility",
+            "url": "/app/landing"
+        },
+        {
+            "menuName": "Department / Block",
+            "url": ""
+        }
+    ],
+    "pageActions": [
+        {
+            "type": "button",
+            "label": "Add Block",
+            "icon": "add",
+            "event": {
+                "type": "click",
+                "onevent": "popup",
+                "popupJson": "block-manage",
+                "popupwidth":"30%"
+            }
+        },
+        {
+            "action": "refresh"
+        },
+        {
+            "action": "export"
+        },
+        {
+            "action": "filter"
+        }
+    ],
+    "filter": [
+        {
+            "name": "roleName",
+            "type": "textbox",
+            "placeholder": "Role"
+        }
+    ],
+    "table": {
+        "dataSource": "api/common/blocks",
+        "tableColumns": [
+            {
+                "key": "name",
+                "title": "Name"
+            },
+            {
+                "key": "plantName",
+                "title": "Plant"
+             
+                
+            },
+            {
+                "key": "action",
+                "title": "Action",
+                "actions":[
+                    {
+                        "type": "Edit",
+                        "label": "Edit",
+                        "icon": "edit",
+                        "isDisabled":"false",
+                        "event": {
+                            "type": "click",
+                            "onevent": "popup",
+                            "popupJson": "block-manage"
+                        }
+                    },
+                    {
+                        "type": "Delete",
+                        "label": "Delete",
+                        "icon": "delete",
+                        "isDisabled": "false",
+                        "event": {
+                            "type": "click",
+                            "onevent": "popup",
+                            "popupJson": "confirmation-popup",
+                            "popupwidth": "25%",
+                            "api": "api/common/blocks"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

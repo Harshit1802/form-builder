@@ -1,0 +1,100 @@
+{
+    "pageTitle": "Block",
+    "pageTitlePrefix": "addedit",
+    "type": "popup",
+    "pageConfig": {
+        "parentPageJson": "role",
+        "onPopupClose": "refresh",
+        "defaultData":"parent",
+        "footerActions": [
+            {
+                "type": "button",
+                "label": "Cancel",
+                "icon": "",
+                "event": {
+                    "type": "click",
+                    "onevent": "closeandrefreshparent",
+                    "api": ""
+                }
+            },
+            {
+                "type": "button",
+                "label": "Save",
+                "icon": "plus",
+                "event": {
+                    "type": "click",
+                    "onevent": "postformdata",
+                    "api": "api/common/blocks"
+                }
+            }
+        ]
+    },
+    "formConfig": {
+        "rows": [
+            {
+                "columns": [
+                    {
+                        "width": 20,
+                        "height": "2",
+                        "controls": [
+                            {
+                                "label": "Plant",
+                                "id": "txtRole",
+                                "type": "select",
+                                "fieldId": "plantId",
+                                "placeholder": "Plant",
+                                "tooltip": "",
+                                "validations": [
+                                    {
+                                        "type": "required",
+                                        "message": "Plant is required"
+                                    }
+                                ],
+                                "isDisabled": false,
+                                "isVisible": true,
+                                "isChangeHandle": false,
+                                "css": "",
+                                "options": {
+                                    "dataSource": "api/common/plants",
+                                    "dataSourceType": "api",
+                                    "textField": "name",
+                                    "valueField": "_id",
+                                    "list": []
+                                }
+                            }
+                        ]
+                    }
+                ]
+                },
+                {
+                    "columns": [
+                    {
+                        "width": 20,
+                        "height": "2",
+                        "controls": [
+                            {
+                                "label": "Block",
+                                "id": "",
+                                "type": "text",
+                                "fieldId": "name",
+                                "placeholder": "Block Name",
+                                "tooltip": "",
+                                "validations": [
+                                    {
+                                        "type": "required",
+                                        "message": "Block is required"
+                                    }
+                                ],
+                                "isDisabled": false,
+                                "isVisible": true,
+                                "isChangeHandle": false,
+                                "css": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+         
+        ]
+    }
+}
